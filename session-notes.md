@@ -18,7 +18,11 @@
 - 2026-10-24: User rejected the first version of the plan. Reason: the friendly "empty or whitespace" message must not show by default on first load, only after a real failed add. Plan updated and then approved.
 
 ## /rewind log
-- None so far. When one is used, record the date, what was rewound, and why.
+- 2026-10-24: User used `/rewind` during this project (reported by the user; Claude has no record of it in the session history, so the details below are in the user's words).
+  - What was undone: the idea of putting a paywall on the site, which would have changed the app from free to a paid app (a one-dollar payment).
+  - Why: the user rewound it just to test the design aspect of the app, i.e. to get back to the free version and check the design.
+  - Result: the app stays free. No paywall code exists in the project files.
+- When another one is used, record the date, what was rewound, and why.
 
 ## /clear and /compact log
 - 2026-10-24: `/compact` run by user after the app was finished and verified, before starting design work. Why: free up context for the design phase; all progress is saved in `session-notes.md`, `plan.md` and `CLAUDE.md`.
@@ -39,6 +43,16 @@
 - Known minor behavior: double-clicking Add adds the task, then the second click shows the "Please type a task" message because the input was cleared. Left as is.
 - Next: user runs the full "Done means" scenario and checks the console is clean.
 - Step 7 done. User ran the full "Done means" scenario (add 3 tasks, check one off, filters, counter reads 2, refresh restores everything) plus the keyboard and quality checks, with no errors or bugs.
+
+## Design phase
+- 2026-10-24: Direction chosen by user: modern look similar to Apple's layouts (light theme, blue accent). Plan: 7 small steps, mostly in `style.css`, no behavior changes.
+- Design steps 1-3 done: design tokens as CSS variables (Apple-style grey background, SF system font stack, #0071e3 accent), rounded card with soft shadow, larger title, softer input, solid accent Add button with hover/pressed states, full-width card on phones. Focus outline kept, contrast checked against AA.
+- User checked steps 1-3 in the browser and approved. The `/rewind` details were also supplied and logged above.
+- Design steps 4-5 done (`style.css` only): filters are now an iOS-style segmented control (grey track, white pill for the active one, still `aria-pressed`). Task rows have more padding and a hover highlight, a round custom checkbox (still a real checkbox, so keyboard and screen readers are unchanged), and a quiet red text Delete button.
+- User checked steps 4-5 and approved.
+- Design steps 6-7 done (`style.css` only): the "No tasks yet" hint is centered with more space, and the counter is a small footer line. Added dark mode that follows the system setting (new `--fill` and `--pill` tokens so inputs, the filter track and the selected pill work in both themes) and `prefers-reduced-motion` support.
+- Decision: skipped the fade-in animation for new tasks. `render()` rebuilds the whole list, so every check or filter click would replay it; avoiding that would need JS changes, and the app should stay simple.
+- User checked steps 6-7 (light and dark mode) and approved. Design phase complete; committed to git.
 
 ## Status: COMPLETE (2026-10-24)
 - All 7 steps of `plan.md` finished and verified by the user.
