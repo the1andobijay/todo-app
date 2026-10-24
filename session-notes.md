@@ -15,16 +15,21 @@
 - Decision: keep it simple. The filter is not remembered; it resets to All after a refresh.
 
 ## Plan pushback
-- 2026-10-24: User rejected the first version of the plan. Reason: the friendly "empty or whitespace" message must not show by default on first load, only after a real failed add. Plan updated and then approved.
+- 2026-10-24: User rejected the first version of the plan (in plan mode, before approving it). The user's exact words:
+  > "Lets no approve this yet and make some changes. Lets make sure that the reject with a friendly message is not the default when empty or whitespace-only input is avaiable. What I mean by this, if I first start the app of course no datta will be there, so that friendly message would not be needed until actual inputs are used. If you need clarity let me know."
+  - Reason: the friendly "empty or whitespace" message must not show by default on first load, only after a real failed add.
+  - What changed in the plan: the message area is empty on every load; the message appears only after a failed add and is cleared when the user starts typing or adds a valid task; `render()` never sets it. The plan was updated, then approved, and saved as `plan.md` (see "Done means" step 0).
+- 2026-10-24: Second, smaller pushback: when asked about the open filter decision, the user said "Lets keep is simple", so the filter resets to All after a refresh and is not saved.
 
 ## /rewind log
-- 2026-10-24: User used `/rewind` during this project (reported by the user; Claude has no record of it in the session history, so the details below are in the user's words).
-  - What was undone: the idea of putting a paywall on the site, which would have changed the app from free to a paid app (a one-dollar payment).
-  - Why: the user rewound it just to test the design aspect of the app, i.e. to get back to the free version and check the design.
-  - Result: the app stays free. No paywall code exists in the project files.
+- 2026-10-24: User used `/rewind` right after starting the design work (reported by the user; Claude has no record of it in the session history, so the details below are in the user's words).
+  - Sequence: (1) the first design change was a modern look; (2) the user then tried a paywall, changing the site from a free app to one that costs a dollar; (3) the user rewound all the way back to before the modern look.
+  - Why: to test the design aspect of the app, trying a paywall as an experiment and then returning to the free version.
+  - Result: the app stays free and no paywall code exists in the project files. The modern (Apple-style) look was then rebuilt step by step and is in the final commit.
 - When another one is used, record the date, what was rewound, and why.
 
 ## /clear and /compact log
+- 2026-10-24: `/clear` run by user (reported by the user; not visible in this session's history) to move on to the design steps. Why: the skeleton and functionality of the app were finished, and design is an unrelated task, so the user wanted a fresh context for it.
 - 2026-10-24: `/compact` run by user after the app was finished and verified, before starting design work. Why: free up context for the design phase; all progress is saved in `session-notes.md`, `plan.md` and `CLAUDE.md`.
 
 ## Build log
@@ -57,4 +62,5 @@
 ## Status: COMPLETE (2026-10-24)
 - All 7 steps of `plan.md` finished and verified by the user.
 - Final files: `index.html`, `style.css`, `script.js`, plus `CLAUDE.md`, `plan.md`, `session-notes.md`.
-- No `/rewind` or `/clear` was used. One `/compact` was run at the end (see the log above).
+- Context tools used: one `/compact` before the design phase, one `/clear` to start the design steps, and one `/rewind` during the design phase (paywall experiment). See the logs above for when and why.
+- The design phase was completed afterwards and is described in "Design phase".
