@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.app {
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.task-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.task-form-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.task-form-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+input,
+button {
+  font: inherit;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Keep the focus outline visible for keyboard users */
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.message {
+  min-height: 1.25rem;
+  margin: 0.5rem 0 0;
+  color: #b91c1c;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.filters button[aria-pressed="true"] {
+  background: #1d4ed8;
+  color: #fff;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.empty-hint,
+.counter {
+  color: #4b5563;
+}
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.task-label {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.task-text {
+  overflow-wrap: anywhere; /* long text wraps instead of breaking the layout */
+}
+
+/* Strikethrough, not color alone, marks a completed task */
+.task-text.completed {
+  text-decoration: line-through;
+  color: #6b7280;
+}
