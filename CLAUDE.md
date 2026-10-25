@@ -49,3 +49,7 @@
 - Small functions with clear names; each does one thing.
 - No libraries or frameworks unless I approve them first.
 - Match the existing code's naming and comment style; comment the "why", not the "what".
+
+## Git
+- Write commit messages as `type: short summary` (feat, fix, docs, style, refactor, chore).
+- One logical change per commit.
