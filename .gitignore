@@ -1,0 +1,11 @@
+# dependencies (can be re-downloaded, and huge)
+node_modules/
+
+# secrets: NEVER commit
+.env
+.env.*
+!.env.example
+
+# OS junk
+Thumbs.db
+.DS_Store
