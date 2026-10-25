@@ -66,3 +66,5 @@
 - The design phase was completed afterwards and is described in "Design phase".
 
 Learned the git loop: edit, status, add, status, commit, log.
+
+- 2026-10-24: Changed the page title in `index.html` from "To-Do App" to "My List" (picked from 3 options: Tasks, Done & Dusted, My List). Committed as `41c02c3`.
