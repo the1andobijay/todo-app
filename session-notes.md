@@ -64,3 +64,5 @@
 - Final files: `index.html`, `style.css`, `script.js`, plus `CLAUDE.md`, `plan.md`, `session-notes.md`.
 - Context tools used: one `/compact` before the design phase, one `/clear` to start the design steps, and one `/rewind` during the design phase (paywall experiment). See the logs above for when and why.
 - The design phase was completed afterwards and is described in "Design phase".
+
+Learned the git loop: edit, status, add, status, commit, log.
