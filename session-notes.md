@@ -68,3 +68,5 @@
 Learned the git loop: edit, status, add, status, commit, log.
 
 - 2026-10-24: Changed the page title in `index.html` from "To-Do App" to "My List" (picked from 3 options: Tasks, Done & Dusted, My List). Committed as `41c02c3`.
+
+- 2026-10-24: Added `.env.example` with `FAKE_API_KEY=your-key-here` as a template for the real `.env`. The app itself does not read it (no build step). Not committed yet.
