@@ -1,4 +1,5 @@
 const MAX_TASK_LENGTH = 200;
+const MANY_LEFT_THRESHOLD = 5; // the counter turns red when more than this many tasks remain
 const STORAGE_KEY = 'todo-app-tasks'; // saved as a JSON array of { id, text, completed }
 
 let tasks = loadTasks();
@@ -186,6 +187,8 @@ function render() {
 
   const left = tasks.filter((task) => !task.completed).length;
   counter.textContent = `${left} ${left === 1 ? 'task' : 'tasks'} left`;
+  // The number stays in the text, so color is never the only signal
+  counter.classList.toggle('many-left', left > MANY_LEFT_THRESHOLD);
 
   // Disabled (not hidden) when there is nothing to clear, so a click can never do nothing silently
   clearCompletedButton.disabled = left === tasks.length;
