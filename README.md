@@ -30,6 +30,7 @@ Then visit http://localhost:8000.
 - Add tasks with the **Add** button or by pressing **Enter**
 - Mark tasks complete (completed tasks get a strikethrough) and delete them
 - Filter by **All**, **Active** or **Completed**
+- **Clear completed** button below the list: permanently deletes every completed task and keeps the active ones. It is disabled when nothing is completed, and keyboard focus returns to the new-task field afterward
 - "N tasks left" counter
 - Tasks persist across refreshes and browser restarts using `localStorage`
 - Input checks: blank tasks are rejected and tasks are limited to 200 characters, with a friendly message
