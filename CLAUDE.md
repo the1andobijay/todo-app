@@ -51,5 +51,6 @@
 - Match the existing code's naming and comment style; comment the "why", not the "what".
 
 ## Git
+- Never commit `.env` or any secret. Keep `.env.example` updated with placeholder values.
 - Write commit messages as `type: short summary` (feat, fix, docs, style, refactor, chore).
 - One logical change per commit.
