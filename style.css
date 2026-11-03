@@ -171,11 +171,37 @@ button:focus-visible {
   color: var(--text-muted);
 }
 
-/* Footer-style summary under the list */
+/* Footer row under the list: counter on the left, Clear completed on the right */
+.list-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
 .counter {
-  margin: 0.75rem 0 0;
+  margin: 0;
   font-size: 0.875rem;
   color: var(--text-muted);
+}
+
+/* Quiet text button like Delete; the disabled look is dimmed plus a not-allowed cursor */
+.clear-completed {
+  padding: 0.25rem 0.625rem;
+  background: transparent;
+  color: var(--danger);
+  font-size: 0.875rem;
+}
+
+.clear-completed:hover:not(:disabled) {
+  background: rgba(215, 0, 21, 0.08);
+}
+
+.clear-completed:disabled {
+  color: var(--text-muted);
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .task-item {

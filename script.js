@@ -11,6 +11,7 @@ const list = document.getElementById('task-list');
 const emptyHint = document.getElementById('empty-hint');
 const counter = document.getElementById('counter');
 const filterButtons = document.querySelectorAll('.filters button');
+const clearCompletedButton = document.getElementById('clear-completed');
 
 function isValidSavedTask(task) {
   return (
@@ -106,6 +107,14 @@ function deleteTask(id) {
   input.focus();
 }
 
+// Permanently removes every completed task and keeps the active ones
+function clearCompleted() {
+  tasks = tasks.filter((t) => !t.completed);
+  saveTasks();
+  render();
+  input.focus(); // the button disables itself once nothing is completed, so don't leave focus on it
+}
+
 function createTaskItem(task) {
   const item = document.createElement('li');
   item.className = 'task-item';
@@ -177,6 +186,9 @@ function render() {
 
   const left = tasks.filter((task) => !task.completed).length;
   counter.textContent = `${left} ${left === 1 ? 'task' : 'tasks'} left`;
+
+  // Disabled (not hidden) when there is nothing to clear, so a click can never do nothing silently
+  clearCompletedButton.disabled = left === tasks.length;
 }
 
 form.addEventListener('submit', (event) => {
@@ -197,5 +209,7 @@ input.addEventListener('input', clearMessage);
 for (const button of filterButtons) {
   button.addEventListener('click', () => setFilter(button.dataset.filter));
 }
+
+clearCompletedButton.addEventListener('click', clearCompleted);
 
 render();

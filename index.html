@@ -28,7 +28,10 @@
     <ul id="task-list" class="task-list"></ul>
     <p id="empty-hint" class="empty-hint">No tasks yet</p>
 
-    <p id="counter" class="counter" aria-live="polite">0 tasks left</p>
+    <div class="list-footer">
+      <p id="counter" class="counter" aria-live="polite">0 tasks left</p>
+      <button type="button" id="clear-completed" class="clear-completed" disabled>Clear completed</button>
+    </div>
   </main>
   <script src="script.js"></script>
 </body>
