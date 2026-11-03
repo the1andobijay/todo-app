@@ -12,7 +12,7 @@ No install or build is needed.
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/JoshGJr/todo-app.git
+   git clone https://github.com/the1andobijay/todo-app.git
    cd todo-app
    ```
 2. Open `index.html` in your browser (double-click it, or drag it into a browser window).
