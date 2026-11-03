@@ -4,10 +4,7 @@ A simple to-do list that runs in your browser. Your tasks are saved on your own 
 
 ## Screenshot
 
-<!-- TODO: add a screenshot, e.g. save it as docs/screenshot.png and uncomment the line below -->
-<!-- ![To-Do App screenshot](docs/screenshot.png) -->
-
-*Screenshot coming soon.*
+![To-Do App showing an empty list with the New task field, Add button, and All, Active and Completed filters](docs/screenshot.png)
 
 ## How to run
 
