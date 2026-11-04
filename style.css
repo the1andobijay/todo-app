@@ -186,6 +186,10 @@ button:focus-visible {
   color: var(--text-muted);
 }
 
+.counter.many-left {
+  color: var(--danger);
+}
+
 /* Quiet text button like Delete; the disabled look is dimmed plus a not-allowed cursor */
 .clear-completed {
   padding: 0.25rem 0.625rem;
